@@ -18,6 +18,8 @@ def test_rivers_by_station_number():
     assert type(a) == list
     if len(a) > 10:
         assert a[-1][1] == a[-2][1]
+    else:
+        pass
 
 
 

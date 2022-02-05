@@ -6,8 +6,13 @@ from floodsystem.geo import stations_within_radius
 def run():
     stations=build_station_list()
     original_list=stations_within_radius(stations, (52.2053, 0.1218), 10)
-    sorted_list=original_list.sort()
-    print("The stations within 10 km:{}".format(sorted_list))
+    stations_within = []
+    for station in stations:
+        stations_within.append(station.name)
+    
+    stations_within.sort()
+
+    print("The stations within 10 km:{}".format(stations_within))
 
 
 if __name__ == "__main__":

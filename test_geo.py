@@ -19,18 +19,7 @@ def test_rivers_by_station_number():
     a = rivers_by_station_number(stations, 10)
     assert type(a) == list
 
-def test_stations_within_radius():
-    s_id = "test-s-id"
-    m_id = "test-m-id"
-    label = "some station"
-    coord = (-2.0, 4.0)
-    trange = (-2.3, 3.4445)
-    river = "River X"
-    town = "My Town"
-    s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-    stations = [s]
-    n = stations_within_radius(stations, (0, 0), 30)
-    assert n == 1
+
 
 
 

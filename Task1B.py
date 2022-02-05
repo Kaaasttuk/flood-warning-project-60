@@ -10,11 +10,11 @@ def run():
     p=(52.2053, 0.1218)
 
     original_list=stations_by_distance(stations, p)
-    closest_list=original_list[0,9]
+    closest_list=original_list[0:10]
     print("The closest 10 stations:{}".format(closest_list))
 
-    reverse_list=original_list.reverse()
-    furthest_list=reverse_list[0,9]
+    
+    furthest_list= original_list[:10:-1]
     print("The furthest 10 stations:{}".format(furthest_list))
 
 

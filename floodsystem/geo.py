@@ -63,9 +63,9 @@ def rivers_by_station_number(stations, N):
 def stations_by_distance(stations, p):
     stations_by_distance=[]
     for station in stations:
-        distance=haversine(station.coordinate, p)
-        stations_by_distance.append((station, station.town, distance))
-        stations_by_distance=sorted_by_key(stations_by_distance, 2)
+        distance = haversine(station.coord, p)
+        stations_by_distance.insert(0, (station.name, station.town, distance))
+    stations_by_distance=sorted_by_key(stations_by_distance, 2)
     return stations_by_distance
 
 
@@ -75,7 +75,7 @@ def stations_by_distance(stations, p):
 def stations_within_radius(stations, centre, r):
     stations_within_radius=[]
     for station in stations:
-        distance=haversine(station.coordinate, centre)
+        distance=haversine(station.coord, centre)
         if distance>=r:
             pass
         else:

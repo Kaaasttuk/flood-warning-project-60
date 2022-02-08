@@ -30,7 +30,7 @@ def test_stations_within_radius():
     town = "My Town"
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
     station = [s]
-    n = stations_within_radius(station, (0, 0), 100)
+    n = stations_within_radius(station, (-2.0, 4.0), 10)
     assert len(n) == 1
 
 

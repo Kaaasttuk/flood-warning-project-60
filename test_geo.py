@@ -29,9 +29,9 @@ def test_stations_within_radius():
     river = "River X"
     town = "My Town"
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-    stations = [s]
-    n = stations_within_radius(stations, (0, 0), 30)
-    assert n == 1
+    station = [s]
+    n = stations_within_radius(station, (0, 0), 100)
+    assert len(n) == 1
 
 
 

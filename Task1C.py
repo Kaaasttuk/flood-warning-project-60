@@ -7,7 +7,7 @@ def run():
     stations=build_station_list()
     original_list=stations_within_radius(stations, (52.2053, 0.1218), 10)
     stations_within = []
-    for station in stations:
+    for station in original_list:
         stations_within.append(station.name)
     
     stations_within.sort()

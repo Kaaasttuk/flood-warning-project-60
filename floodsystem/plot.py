@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+from floodsystem.analysis import polyfit
 
 
 #a function that displays a plot (using Matplotlib) of the water level data against time for a station, and include on the plot lines for the typical low and high levels. 
@@ -28,4 +29,8 @@ def plot_water_levels(station, dates, levels):
 
     plt.show()
 
+
+def plot_water_level_with_fit(station, dates, levels, p):
+    plot_water_levels(station, dates, levels)
+    polyfit(dates, levels, p)
 

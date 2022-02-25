@@ -6,6 +6,7 @@ from floodsystem.geo import rivers_with_station, stations_by_river
 
 def run():
     stations = build_station_list()
+    print(len(stations))
 
     rivers = rivers_with_station(stations)
 
@@ -32,3 +33,4 @@ def run():
 if __name__ == "__main__":
     print("*** Task 1D: CUED Part IA Flood Warning System ***")
     run()
+    

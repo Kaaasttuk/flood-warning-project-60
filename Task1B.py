@@ -14,7 +14,7 @@ def run():
     print("The closest 10 stations:{}".format(closest_list))
 
     
-    furthest_list= original_list[-11:-1]
+    furthest_list= original_list[-10:]
     print("The furthest 10 stations:{}".format(furthest_list))
 
 

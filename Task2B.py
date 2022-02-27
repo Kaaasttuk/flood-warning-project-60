@@ -8,7 +8,7 @@ def run():
 
     stations_over=stations_level_over_threshold(stations, tol)
     for station in stations_over:
-        print ("%d %d" % (station[0], station[1]))
+        print ("{}: {}".format(station[0], station[1]))
 
 if __name__ == "__main__":
     print("*** Task 2B: CUED Part IC Flood Warning System ***")

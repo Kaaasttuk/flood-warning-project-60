@@ -8,4 +8,8 @@ def run():
 
     N_stations=stations_highest_rel_level(stations, N)
     for station in N_stations:
-        print ("%d %d" % (station[0], station[1]))
+        print ("{} : {}".format(station[0], station[1]))
+
+if __name__ == "__main__":
+    print("*** Task 2C: CUED Part IC Flood Warning System ***")
+    run()

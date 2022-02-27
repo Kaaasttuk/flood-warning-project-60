@@ -27,4 +27,6 @@ def stations_highest_rel_level(stations, N):
             stations_highest_rel_level.insert(0, (station.name, station.relative_water_level()))
     stations_highest_rel_level=sorted_by_key(stations_highest_rel_level, 1)
     stations_highest_rel_level.reverse()
-    stations_highest_rel_level=stations_highest_rel_level[0:N-1]
+    new_list=stations_highest_rel_level[0:N-1]
+
+    return new_list

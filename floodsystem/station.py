@@ -47,6 +47,15 @@ class MonitoringStation:
                 return False
             else:
                 return True
+    
+    def relative_water_level(self):
+        if self.typical_range == None:
+            return None
+        elif self.latest_level == None:
+            return None
+        else:
+            ratio=self.latest_level/self.typical_range
+            return ratio
 
 
 def inconsistent_typical_range_stations(stations):

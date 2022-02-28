@@ -27,7 +27,7 @@ def stations_highest_rel_level(stations, N):
             stations_highest_rel_level.insert(0, (station, station.relative_water_level()))
     stations_highest_rel_level=sorted_by_key(stations_highest_rel_level, 1)
     stations_highest_rel_level.reverse()
-    new_list=stations_highest_rel_level[0:N-1]
+    new_list=stations_highest_rel_level[0:N]
     list_stations = []
     for tuple in new_list:
         list_stations.append(tuple[0])

@@ -8,8 +8,9 @@ from floodsystem.analysis import polyfit
 
 def run():
     stations = build_station_list()
+    update_water_levels(stations)
     station_to_plot = stations_highest_rel_level(stations, 5)
-    
+
 
     dt = 2
 

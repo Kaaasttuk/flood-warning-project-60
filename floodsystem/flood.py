@@ -20,8 +20,11 @@ def stations_level_over_threshold(stations, tol):
 
 def stations_highest_rel_level(stations, N):
     stations_highest_rel_level=[]
+    
     for station in stations:
         if station.relative_water_level() == None:
+            pass
+        elif station.relative_water_level() > 100:
             pass
         else:
             stations_highest_rel_level.insert(0, (station, station.relative_water_level()))

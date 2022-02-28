@@ -20,6 +20,7 @@ def run():
 
 if __name__ == "__main__":
     print("*** Task 2E: CUED Part IC Flood Warning System ***")
+    print("stations with over 100 relative level are excluded as outliers.")
     run()
 
 

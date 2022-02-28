@@ -9,7 +9,7 @@ def stations_level_over_threshold(stations, tol):
             pass
         else:
             if station.relative_water_level() > tol:
-                stations_level_over_threshold.append((station.name, station.relative_water_level()))
+                stations_level_over_threshold.append((station, station.relative_water_level()))
             else:
                 pass
     stations_level_over_threshold=sorted_by_key(stations_level_over_threshold, 1)
@@ -24,9 +24,13 @@ def stations_highest_rel_level(stations, N):
         if station.relative_water_level() == None:
             pass
         else:
-            stations_highest_rel_level.insert(0, (station.name, station.relative_water_level()))
+            stations_highest_rel_level.insert(0, (station, station.relative_water_level()))
     stations_highest_rel_level=sorted_by_key(stations_highest_rel_level, 1)
     stations_highest_rel_level.reverse()
     new_list=stations_highest_rel_level[0:N-1]
+    list_stations = []
+    for tuple in new_list:
+        list_stations.append(tuple[0])
 
-    return new_list
+
+    return list_stations

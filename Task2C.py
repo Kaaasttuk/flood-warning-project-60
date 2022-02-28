@@ -1,14 +1,16 @@
 from floodsystem.station import MonitoringStation
-from floodsystem.stationdata import build_station_list
+from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.flood import stations_highest_rel_level
 
 def run():
     stations=build_station_list()
+    update_water_levels(stations)
     N=10
 
     N_stations=stations_highest_rel_level(stations, N)
+
     for station in N_stations:
-        print ("{} : {}".format(station[0], station[1]))
+        print ("{} : {}".format(station.name, station.relative_water_level()))
 
 if __name__ == "__main__":
     print("*** Task 2C: CUED Part IC Flood Warning System ***")

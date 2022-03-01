@@ -16,6 +16,8 @@ def run():
 
     for station in station_to_plot:
         dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
+        print(levels)
+        print(len(levels))
         polyfit(dates, levels, 4)
         plot_water_levels(station, dates, levels)
         

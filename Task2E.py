@@ -3,25 +3,12 @@ import datetime
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.plot import plot_water_levels
+from floodsystem.flood import stations_highest_rel_level
 
-def run():
+def run():   
     stations = build_station_list()
     update_water_levels(stations)
-    
-    plot_stations = []
-    for station in stations:
-        if station.latest_level == None:
-            pass
-        else:
-            plot_stations.append([station, station.latest_level])
-    
-    plot_stations = sorted(plot_stations, key = lambda x:x[1])
-    print(plot_stations)
-
-    station_to_plot = []
-
-    for list in plot_stations[-5:]:
-        station_to_plot.append(list[0])
+    station_to_plot = stations_highest_rel_level(stations, 5)
 
     dt = 10
 
@@ -33,6 +20,7 @@ def run():
 
 if __name__ == "__main__":
     print("*** Task 2E: CUED Part IC Flood Warning System ***")
+    print("stations with over 100 relative level are excluded as outliers.")
     run()
 
 

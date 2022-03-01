@@ -13,7 +13,9 @@ def test_stations_level_over_threshold():
     trange = (-2.0, 3.0)
     river = "Cambridge River"
     town = "Cambridge Town"
-    Cambridge_Station = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
+    latest_level = 0.1
+
+    Cambridge_Station = MonitoringStation(s_id, m_id, label, coord, trange, river, town, latest_level)
     station = [Cambridge_Station]
     list = stations_level_over_threshold (station, 0)
     assert len(list) == 1

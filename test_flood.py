@@ -1,6 +1,7 @@
 from floodsystem.flood import stations_level_over_threshold, stations_highest_rel_level
 from floodsystem.stationdata import build_station_list
 from floodsystem.station import MonitoringStation
+from Task2G import towns_with_station, assess_risk
 
 stations = build_station_list()
 
@@ -13,9 +14,10 @@ def test_stations_level_over_threshold():
     trange = (-2.0, 3.0)
     river = "Cambridge River"
     town = "Cambridge Town"
-    latest_level = 0.1
+    
 
-    Cambridge_Station = MonitoringStation(s_id, m_id, label, coord, trange, river, town, latest_level)
+    Cambridge_Station = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
+    Cambridge_Station.latest_level = 0.1
     station = [Cambridge_Station]
     list = stations_level_over_threshold (station, 0)
     assert len(list) == 1
@@ -24,3 +26,4 @@ def test_stations_highest_rel_level():
     a = stations_highest_rel_level(stations,0)
     assert type(a) == list
     assert len(a) == 0
+

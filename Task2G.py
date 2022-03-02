@@ -107,7 +107,7 @@ def run():
     severe, high, moderate, low = assess_risk(towns, stations_in_town)
 
     print("The risk of flooding is greatest in following towns:{}".format(severe))
-    print("The number of stations in each categories is, high:{}, moderate:{}, low:{}".format(len(high), len(moderate), len(low)))
+    print("The number of towns in each categories is, high:{}, moderate:{}, low:{}".format(len(high), len(moderate), len(low)))
 
 if __name__ == "__main__":
     print("*** Task 2G: CUED Part IC Flood Warning System ***")
